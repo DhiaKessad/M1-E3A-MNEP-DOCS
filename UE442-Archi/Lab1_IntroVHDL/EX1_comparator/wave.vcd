@@ -1,0 +1,74 @@
+$date
+  Tue Oct 20 10:41:52 2026
+$end
+$version
+  GHDL v0
+$end
+$timescale
+  1 fs
+$end
+$scope module standard $end
+$upscope $end
+$scope module std_logic_1164 $end
+$upscope $end
+$scope module tb_compa_4 $end
+$var reg 4 ! g[3:0] $end
+$var reg 4 " f[3:0] $end
+$var reg 1 # c $end
+$var reg 1 $ s $end
+$scope module uut $end
+$var reg 4 % a[3:0] $end
+$var reg 4 & b[3:0] $end
+$var reg 1 ' c $end
+$var reg 1 ( s $end
+$var reg 5 ) e[4:0] $end
+$scope module comp(0) $end
+$upscope $end
+$scope module comp(1) $end
+$upscope $end
+$scope module comp(2) $end
+$upscope $end
+$scope module comp(3) $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+b1010 !
+b1010 "
+1#
+1$
+b1010 %
+b1010 &
+1'
+1(
+b11111 )
+#10000000
+b1011 "
+0$
+b1011 &
+0(
+b00001 )
+#20000000
+b0110 !
+b0110 "
+0#
+b0110 %
+b0110 &
+0'
+b11111 )
+#30000000
+b1010 !
+b1010 "
+1#
+1$
+b1010 %
+b1010 &
+1'
+1(
+#40000000
+b1000 "
+0$
+b1000 &
+0(
+b00011 )
