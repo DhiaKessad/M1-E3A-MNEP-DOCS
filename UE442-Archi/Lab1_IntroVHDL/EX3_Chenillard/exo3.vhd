@@ -1,28 +1,25 @@
 library ieee;
 use IEEE.std_logic_1164.all;
 
-entity compa_4 is 
-generic ( N : integer := 4);
-port (a, b : in std_logic_vector(N-1 downto 0);
-      e : out std_logic);
-end entity compa_4;
+entity micro is 
+port( A15, wr, rd, PSEN : in std_logic;
+      S : out std_logic_vector(7 downto 0)); -- OE CE of U1, CE OE WE of U3, CE OE WE of U2
 
-architecture rtl of compa_4 is 
+end entity
 
-begin
-process(a, b)
-    variable s, v : std_logic;
-begin
-    s := '1';
-    v := '1';
-
-    for i in N-1 downto 0 loop
-        if s = '1' and v = '1' then
-            v := not(a(i)) or b(i);
-            s := not(b(i)) or a(i);
+architecture rtl of micro is
+    begin
+        if A15 then S[5] <='0';
+        else S[2] <= '0'; 
+        S[7] <= '0';
         end if;
-    end loop;
-
-    e <= not(s) and not(v);
-end process;
-end architecture rtl;
+        if PSEN then 
+        if rd then S[4] <= '0';
+        S[1] <= '0';
+        end if;
+        else S[6] <= '0';
+        end if;
+        if wr ='0' then S[0] <= '0';
+        S[3] <= '0';
+        end if;
+        end architecture;
